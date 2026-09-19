@@ -1,884 +1,889 @@
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-        content="Personal Portfolio — A digital archive of my work, achievements and experiences.">
-
-    <title>Portfolio — 2026</title>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect"
-        href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet"
-        href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ชมรมเณรไผ่สตูดิโอ</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+<div class="app">
 
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
+<aside class="sidebar">
 
-    <header class="navbar">
+    <div class="logo">
 
-        <a href="#home"
-            class="logo">
+        <div class="logo-icon">
+            <img src="ตราชมรม.jpg" alt="โลโก้ชมรม">
+        </div>
 
-            <span class="logo-mark">
-                AP
-            </span>
+        <div class="logo-text">
+            <h2>ชมรมเณรไผ่สตูดิโอ</h2>
+            <span>MEDIA MANAGEMENT</span>
+        </div>
 
-            <span class="logo-text">
-                PORTFOLIO
-            </span>
-
-        </a>
+    </div>
 
 
-        <nav class="nav-menu">
+    <nav class="menu">
 
-            <a href="#certificates">
-                Certificates
-            </a>
-
-            <a href="#academic">
-                Academic
-            </a>
-
-            <a href="#projects">
-                Projects
-            </a>
-
-            <a href="#activities">
-                Activities
-            </a>
-
-            <a href="#skills">
-                Skills
-            </a>
-
-        </nav>
-
-
-        <button class="menu-button"
-            id="menuButton"
-            aria-label="Open menu">
-
-            <span></span>
-            <span></span>
-
+        <button class="menu-item active"
+            data-page="home"
+            onclick="showPage('home',this)">
+            <span>⌂</span>
+            หน้าหลัก
         </button>
 
-    </header>
+        <button class="menu-item"
+            data-page="jobs"
+            onclick="showPage('jobs',this)">
+            <span>▣</span>
+            งานทั้งหมด
+        </button>
+
+        <button class="menu-item"
+            data-page="mine"
+            onclick="showPage('mine',this)">
+            <span>♙</span>
+            งานของฉัน
+        </button>
+
+        <button class="menu-item"
+            data-page="calendar"
+            onclick="showPage('calendar',this)">
+            <span>▦</span>
+            ปฏิทินงาน
+        </button>
+
+        <button class="menu-item"
+            data-page="archive"
+            onclick="showPage('archive',this)">
+            <span>▤</span>
+            คลังผลงาน
+        </button>
+
+        <button class="menu-item"
+            data-page="stats"
+            onclick="showPage('stats',this)">
+            <span>◈</span>
+            สถิติ
+        </button>
+
+        <button class="menu-item"
+            data-page="members"
+            onclick="showPage('members',this)">
+            <span>♟</span>
+            สมาชิก
+        </button>
+
+    </nav>
 
 
+    <div class="sidebar-bottom">
 
-    <!-- =========================
-         HERO
-    ========================== -->
+        <div class="studio-status">
+            <span class="status-dot"></span>
+            ระบบพร้อมใช้งาน
+        </div>
 
-    <main>
+    </div>
 
-        <section class="hero"
-            id="home">
-
-            <div class="hero-content">
-
-                <div class="hero-label reveal">
-
-                    <span class="status-dot"></span>
-
-                    PERSONAL PORTFOLIO
-
-                    <span class="thai-label">
-                        · แฟ้มสะสมผลงาน
-                    </span>
-
-                </div>
+</aside>
 
 
-                <h1 class="hero-title reveal">
+<main class="main">
 
-                    WELCOME TO
+<header class="topbar">
 
-                    <span>
-                        MY PORTFOLIO
-                    </span>
+    <div>
 
-                    <span class="my-name">
-                        FOR APIWAT BOONKHRONG
-                    </span>
+        <h1 id="pageTitle">
+            หน้าหลัก
+        </h1>
 
-                </h1>
+        <p id="pageSubtitle">
+            ศูนย์รวมงานของชมรมเณรไผ่สตูดิโอ
+        </p>
 
-
-                <p class="hero-description reveal">
-
-                    A digital archive of my work,
-                    achievements and experiences.
-
-                    <br>
-
-                    <span>
-                        รวมผลงาน ความสำเร็จ
-                        และประสบการณ์
-                        ที่ได้สะสมตลอดเส้นทางการเรียนรู้
-                        ของ อภิวัฒน์ บุญครอง
-                    </span>
-
-                </p>
+    </div>
 
 
-                <div class="hero-actions reveal">
+    <div class="top-actions">
 
-                    <a href="#projects"
-                        class="primary-button">
+        <div class="search-box">
 
-                        Explore My Work
+            <span>⌕</span>
 
-                        <span>↗</span>
+            <input
+                id="globalSearch"
+                placeholder="ค้นหางานหรือชื่อสมาชิก..."
+                oninput="globalSearch()"
+            >
 
-                    </a>
+        </div>
 
 
-                    <a href="#certificates"
-                        class="secondary-button">
+        <button
+            class="add-btn"
+            onclick="openModal()"
+        >
+            ＋ เพิ่มงาน
+        </button>
 
-                        View Certificates
+    </div>
 
-                        <span>↓</span>
+</header>
 
-                    </a>
 
-                </div>
+<!-- HOME -->
 
+<section id="home" class="page active">
+
+    <div class="welcome">
+
+        <div>
+
+            <span class="welcome-small">
+                ยินดีต้อนรับ 👋
+            </span>
+
+            <h2>
+                จัดการงานของ<br>
+                <strong>
+                    ชมรมเณรไผ่สตูดิโอ
+                </strong>
+            </h2>
+
+            <p>
+                รวมงานถ่ายภาพ วิดีโอ และตัดต่อไว้ในที่เดียว
+            </p>
+
+        </div>
+
+        <div class="welcome-camera">
+            🎬
+        </div>
+
+    </div>
+
+
+    <div class="stat-grid">
+
+        <div class="stat-card">
+            <div class="stat-icon blue">▣</div>
+            <div>
+                <span>งานทั้งหมด</span>
+                <strong id="totalJobs">0</strong>
             </div>
+        </div>
 
-
-            <!-- SIDE INFORMATION -->
-
-            <div class="hero-meta reveal">
-
-                <div class="meta-item">
-
-                    <span>
-                        BASED IN
-                    </span>
-
-                    <strong>
-                        THAILAND
-                    </strong>
-
-                </div>
-
-
-                <div class="meta-item">
-
-                    <span>
-                        YEAR
-                    </span>
-
-                    <strong>
-                        2026
-                    </strong>
-
-                </div>
-
-
-                <div class="meta-item">
-
-                    <span>
-                        FOCUS
-                    </span>
-
-                    <strong>
-                        TECHNOLOGY
-                        <br>
-                        & CREATIVE
-                    </strong>
-
-                </div>
-
+        <div class="stat-card">
+            <div class="stat-icon orange">◷</div>
+            <div>
+                <span>กำลังจะถึง</span>
+                <strong id="upcomingJobs">0</strong>
             </div>
+        </div>
 
-
-            <!-- SCROLL -->
-
-            <div class="scroll-indicator">
-
-                <span>
-                    SCROLL TO EXPLORE
-                </span>
-
-                <div class="scroll-line"></div>
-
+        <div class="stat-card">
+            <div class="stat-icon purple">●</div>
+            <div>
+                <span>กำลังดำเนินการ</span>
+                <strong id="doingJobs">0</strong>
             </div>
+        </div>
 
-        </section>
-
-
-
-        <!-- =========================
-             SECTION NAVIGATION
-        ========================== -->
-
-        <section class="sections">
-
-            <div class="section-heading">
-
-                <span>
-                    EXPLORE
-                </span>
-
-                <p>
-                    สำรวจข้อมูลและผลงาน
-                </p>
-
+        <div class="stat-card">
+            <div class="stat-icon green">✓</div>
+            <div>
+                <span>เสร็จแล้ว</span>
+                <strong id="doneJobs">0</strong>
             </div>
+        </div>
+
+    </div>
 
 
-            <div class="section-list">
+    <div class="dashboard-grid">
 
+        <div class="content-card">
 
-                <!-- CERTIFICATES -->
-
-                <a href="#certificates"
-                    class="section-card">
-
-                    <div class="section-number">
-                        01
-                    </div>
-
-                    <div class="section-info">
-
-                        <h2>
-                            Certificates
-                        </h2>
-
-                        <p>
-                            เกียรติบัตรและความสำเร็จ
-                        </p>
-
-                    </div>
-
-                    <div class="section-arrow">
-                        ↗
-                    </div>
-
-                </a>
-
-
-                <!-- ACADEMIC -->
-
-                <a href="#academic"
-                    class="section-card">
-
-                    <div class="section-number">
-                        02
-                    </div>
-
-                    <div class="section-info">
-
-                        <h2>
-                            Academic
-                        </h2>
-
-                        <p>
-                            ข้อมูลด้านการเรียน
-                        </p>
-
-                    </div>
-
-                    <div class="section-arrow">
-                        ↗
-                    </div>
-
-                </a>
-
-
-                <!-- PROJECTS -->
-
-                <a href="#projects"
-                    class="section-card featured">
-
-                    <div class="section-number">
-                        03
-                    </div>
-
-                    <div class="section-info">
-
-                        <h2>
-                            Projects
-                        </h2>
-
-                        <p>
-                            ผลงานและโปรเจกต์ที่สร้างขึ้น
-                        </p>
-
-                    </div>
-
-                    <div class="section-arrow">
-                        ↗
-                    </div>
-
-                </a>
-
-
-                <!-- ACTIVITIES -->
-
-                <a href="#activities"
-                    class="section-card">
-
-                    <div class="section-number">
-                        04
-                    </div>
-
-                    <div class="section-info">
-
-                        <h2>
-                            Activities
-                        </h2>
-
-                        <p>
-                            กิจกรรมและประสบการณ์
-                        </p>
-
-                    </div>
-
-                    <div class="section-arrow">
-                        ↗
-                    </div>
-
-                </a>
-
-
-                <!-- SKILLS -->
-
-                <a href="#skills"
-                    class="section-card">
-
-                    <div class="section-number">
-                        05
-                    </div>
-
-                    <div class="section-info">
-
-                        <h2>
-                            Skills
-                        </h2>
-
-                        <p>
-                            ทักษะและความสามารถ
-                        </p>
-
-                    </div>
-
-                    <div class="section-arrow">
-                        ↗
-                    </div>
-
-                </a>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             CERTIFICATES
-        ========================== -->
-
-        <section class="portfolio-section"
-            id="certificates">
-
-
-            <div class="portfolio-heading">
+            <div class="card-header">
 
                 <div>
-
-                    <span class="section-label">
-                        01 / CERTIFICATES
-                    </span>
-
-                    <h2>
-                        Certificates
-                    </h2>
-
-                    <p>
-                        เกียรติบัตรและความสำเร็จ
-                    </p>
-
+                    <h3>งานที่กำลังจะมาถึง</h3>
+                    <p>งานที่ต้องเตรียมตัวเร็ว ๆ นี้</p>
                 </div>
 
-
-                <span class="section-description">
-
-                    A collection of certificates,
-                    achievements and recognitions.
-
-                </span>
-
-            </div>
-
-
-
-            <!-- FILTER -->
-
-            <div class="certificate-filter">
-
-                <button
-                    class="filter-button active"
-                    data-filter="all">
-
-                    All
-
-                </button>
-
-
-                <button
-                    class="filter-button"
-                    data-filter="academic">
-
-                    Academic
-
-                </button>
-
-
-                <button
-                    class="filter-button"
-                    data-filter="competition">
-
-                    Competition
-
-                </button>
-
-
-                <button
-                    class="filter-button"
-                    data-filter="activity">
-
-                    Activities
-
+                <button onclick="showPage('jobs')">
+                    ดูทั้งหมด →
                 </button>
 
             </div>
 
+            <div id="upcomingList"></div>
 
+        </div>
 
-            <!-- =========================
-                 CERTIFICATE GRID
-            ========================== -->
 
-            <div class="certificate-grid">
+        <div class="content-card">
 
+            <div class="card-header">
 
-                <!-- CERTIFICATE 1 -->
-
-                <article
-                    class="certificate-card"
-                    data-category="academic">
-
-                    <div class="certificate-image">
-
-                        <!-- เปลี่ยนชื่อไฟล์ตรง src ได้ -->
-                        <img
-                            src="images/certificates/certificate-01.jpg"
-                            alt="Academic Certificate">
-
-                        <span class="certificate-year">
-                            2026
-                        </span>
-
-                        <span class="view-icon">
-                            ↗
-                        </span>
-
-                    </div>
-
-
-                    <div class="certificate-info">
-
-                        <span class="certificate-category">
-                            ACADEMIC
-                        </span>
-
-                        <h3>
-                            Certificate Name
-                        </h3>
-
-                        <p>
-                            ชื่อกิจกรรมหรืองานที่ได้รับเกียรติบัตร
-                        </p>
-
-
-                        <div class="certificate-meta">
-
-                            <span>
-                                Organization
-                            </span>
-
-                            <span>
-                                2026
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- CERTIFICATE 2 -->
-
-                <article
-                    class="certificate-card"
-                    data-category="competition">
-
-                    <div class="certificate-image">
-
-                        <img
-                            src="images/certificates/certificate-02.jpg"
-                            alt="Competition Certificate">
-
-                        <span class="certificate-year">
-                            2026
-                        </span>
-
-                        <span class="view-icon">
-                            ↗
-                        </span>
-
-                    </div>
-
-
-                    <div class="certificate-info">
-
-                        <span class="certificate-category">
-                            COMPETITION
-                        </span>
-
-                        <h3>
-                            Competition Certificate
-                        </h3>
-
-                        <p>
-                            ใบประกาศจากการแข่งขัน
-                        </p>
-
-
-                        <div class="certificate-meta">
-
-                            <span>
-                                Organization
-                            </span>
-
-                            <span>
-                                2026
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- CERTIFICATE 3 -->
-
-                <article
-                    class="certificate-card"
-                    data-category="activity">
-
-                    <div class="certificate-image">
-
-                        <img
-                            src="images/certificates/certificate-03.jpg"
-                            alt="Activity Certificate">
-
-                        <span class="certificate-year">
-                            2026
-                        </span>
-
-                        <span class="view-icon">
-                            ↗
-                        </span>
-
-                    </div>
-
-
-                    <div class="certificate-info">
-
-                        <span class="certificate-category">
-                            ACTIVITIES
-                        </span>
-
-                        <h3>
-                            Activity Certificate
-                        </h3>
-
-                        <p>
-                            เกียรติบัตรจากกิจกรรม
-                        </p>
-
-
-                        <div class="certificate-meta">
-
-                            <span>
-                                Organization
-                            </span>
-
-                            <span>
-                                2026
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </article>
+                <div>
+                    <h3>งานล่าสุด</h3>
+                    <p>งานที่มีการเพิ่มเข้าระบบ</p>
+                </div>
 
             </div>
 
+            <div id="recentList"></div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-            <!-- =========================
-                 CERTIFICATE MODAL
-            ========================== -->
+<!-- JOBS -->
+
+<section id="jobs" class="page">
+
+<div class="content-card">
+
+    <div class="section-head">
+
+        <div>
+            <h2>งานทั้งหมด</h2>
+            <p>ดูและจัดการงานทั้งหมดของชมรม</p>
+        </div>
+
+        <button
+            class="add-btn"
+            onclick="openModal()"
+        >
+            ＋ เพิ่มงาน
+        </button>
+
+    </div>
+
+
+    <div class="filters">
+
+        <input
+            id="jobSearch"
+            placeholder="🔍 ค้นหาชื่องาน / สมาชิก"
+            oninput="renderJobs()"
+        >
+
+        <select
+            id="typeFilter"
+            onchange="renderJobs()"
+        >
+
+            <option value="">
+                ทุกประเภท
+            </option>
+
+            <option value="ถ่ายภาพ">
+                📷 ถ่ายภาพ
+            </option>
+
+            <option value="ถ่ายวิดีโอ">
+                🎥 ถ่ายวิดีโอ
+            </option>
+
+            <option value="ตัดต่อวิดีโอ">
+                ✂️ ตัดต่อวิดีโอ
+            </option>
+
+        </select>
+
+
+        <select
+            id="statusFilter"
+            onchange="renderJobs()"
+        >
+
+            <option value="">
+                ทุกสถานะ
+            </option>
+
+            <option>
+                กำลังจะถึง
+            </option>
+
+            <option>
+                กำลังดำเนินการ
+            </option>
+
+            <option>
+                เสร็จแล้ว
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div id="allJobs"></div>
+
+</div>
+
+</section>
+
+
+<!-- MY JOBS -->
+
+<section id="mine" class="page">
+
+<div class="content-card">
+
+    <div class="section-head">
+
+        <div>
+            <h2>งานของฉัน</h2>
+            <p>ค้นหางานจากชื่อสมาชิก</p>
+        </div>
+
+    </div>
+
+
+    <div class="mine-search">
+
+        <input
+            id="mineSearch"
+            placeholder="พิมพ์ชื่อของคุณ..."
+            oninput="renderMine()"
+        >
+
+    </div>
+
+
+    <div id="mineJobs"></div>
+
+</div>
+
+</section>
+
+
+<!-- CALENDAR -->
+
+<section id="calendar" class="page">
+
+<div class="content-card">
+
+    <div class="section-head">
+
+        <div>
+            <h2>ปฏิทินงาน</h2>
+            <p>ดูตารางงานตามวัน</p>
+        </div>
+
+    </div>
+
+    <div id="calendarBox"></div>
+
+</div>
+
+</section>
+
+
+<!-- ARCHIVE -->
+
+<section id="archive" class="page">
+
+<div class="content-card">
+
+    <div class="section-head">
+
+        <div>
+            <h2>คลังผลงาน</h2>
+            <p>งานที่ดำเนินการเสร็จแล้ว</p>
+        </div>
+
+    </div>
+
+    <div id="archiveJobs"></div>
+
+</div>
+
+</section>
+
+
+<!-- STATS -->
+
+<section id="stats" class="page">
+
+<div class="stat-grid">
+
+    <div class="stat-card">
+        <div class="stat-icon blue">📷</div>
+        <div>
+            <span>งานถ่ายภาพ</span>
+            <strong id="photoCount">0</strong>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon purple">🎥</div>
+        <div>
+            <span>งานถ่ายวิดีโอ</span>
+            <strong id="videoCount">0</strong>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon orange">✂️</div>
+        <div>
+            <span>งานตัดต่อวิดีโอ</span>
+            <strong id="editCount">0</strong>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon green">✓</div>
+        <div>
+            <span>งานเสร็จแล้ว</span>
+            <strong id="completeCount">0</strong>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="content-card">
+
+    <h2>
+        สมาชิกและจำนวนงาน
+    </h2>
+
+    <div id="memberStats"></div>
+
+</div>
+
+</section>
+
+
+<!-- MEMBERS -->
+
+<section id="members" class="page">
+
+<div class="content-card">
+
+    <div class="section-head">
+
+        <div>
+            <h2>สมาชิกชมรม</h2>
+            <p>
+                จัดการรายชื่อสมาชิกของชมรมเณรไผ่สตูดิโอ
+            </p>
+        </div>
+
+        <button
+            class="add-btn"
+            onclick="openMemberModal()"
+        >
+            ＋ เพิ่มสมาชิก
+        </button>
+
+    </div>
+
+
+    <div class="member-search-box">
+
+        <input
+            id="memberSearch"
+            placeholder="🔍 ค้นหาชื่อสมาชิก..."
+            oninput="renderMembers()"
+        >
+
+    </div>
+
+
+    <div
+        id="membersList"
+        class="members-grid"
+    ></div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+
+<!-- ADD / EDIT JOB -->
+
+<div id="jobModal" class="modal">
+
+<div class="modal-box">
+
+    <div class="modal-header">
+
+        <div>
+
+            <span class="modal-label">
+                ชมรมเณรไผ่สตูดิโอ
+            </span>
+
+            <h2 id="modalTitle">
+                เพิ่มงานใหม่
+            </h2>
+
+        </div>
+
+        <button
+            class="close-btn"
+            onclick="closeModal()"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="form-grid">
+
+        <div class="form-group full">
+
+            <label>ชื่องาน</label>
+
+            <input
+                id="jobTitle"
+                placeholder="เช่น งานวันภาษาไทย"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>วันที่</label>
+
+            <input
+                id="jobDate"
+                type="date"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>เวลา</label>
+
+            <input
+                id="jobTime"
+                type="time"
+            >
+
+        </div>
+
+
+        <div class="form-group full">
+
+            <label>สถานที่</label>
+
+            <input
+                id="jobPlace"
+                placeholder="เช่น หอประชุมโรงเรียน"
+            >
+
+        </div>
+
+
+        <div class="form-group full">
+
+            <label>ประเภทงาน</label>
 
             <div
-                class="certificate-modal"
-                id="certificateModal">
+                class="choice-group"
+                id="jobTypes"
+            >
 
+                <button
+                    type="button"
+                    class="choice"
+                    data-value="ถ่ายภาพ"
+                    onclick="toggleChoice(this)"
+                >
+                    📷 ถ่ายภาพ
+                </button>
 
-                <div class="modal-backdrop"></div>
+                <button
+                    type="button"
+                    class="choice"
+                    data-value="ถ่ายวิดีโอ"
+                    onclick="toggleChoice(this)"
+                >
+                    🎥 ถ่ายวิดีโอ
+                </button>
 
-
-                <div class="certificate-modal-content">
-
-
-                    <button
-                        class="modal-close"
-                        id="modalClose"
-                        aria-label="Close">
-
-                        ×
-
-                    </button>
-
-
-                    <!-- MODAL IMAGE -->
-
-                    <div class="modal-image">
-
-                        <img
-                            id="modalCertificateImage"
-                            src=""
-                            alt="Certificate Preview">
-
-                    </div>
-
-
-                    <!-- MODAL INFORMATION -->
-
-                    <div class="modal-info">
-
-                        <span class="modal-category">
-                            ACADEMIC
-                        </span>
-
-
-                        <h3 id="modalTitle">
-                            Certificate Name
-                        </h3>
-
-
-                        <p id="modalDescription">
-                            รายละเอียดของเกียรติบัตร
-                        </p>
-
-
-                        <div class="modal-details">
-
-
-                            <div>
-
-                                <span>
-                                    Organization
-                                </span>
-
-                                <strong id="modalOrganization">
-                                    Organization
-                                </strong>
-
-                            </div>
-
-
-                            <div>
-
-                                <span>
-                                    Date
-                                </span>
-
-                                <strong id="modalDate">
-                                    2026
-                                </strong>
-
-                            </div>
-
-
-                        </div>
-
-                    </div>
-
-                </div>
+                <button
+                    type="button"
+                    class="choice"
+                    data-value="ตัดต่อวิดีโอ"
+                    onclick="toggleChoice(this)"
+                >
+                    ✂️ ตัดต่อวิดีโอ
+                </button>
 
             </div>
 
-        </section>
-
-
-
-        <!-- =========================
-             ACADEMIC
-        ========================== -->
-
-        <section
-            class="placeholder"
-            id="academic">
-
-            <span>
-                02
-            </span>
-
-            <h2>
-                Academic
-            </h2>
-
-            <p>
-                ข้อมูลด้านการเรียน
-            </p>
-
-        </section>
-
-
-
-        <!-- =========================
-             PROJECTS
-        ========================== -->
-
-        <section
-            class="placeholder"
-            id="projects">
-
-            <span>
-                03
-            </span>
-
-            <h2>
-                Projects
-            </h2>
-
-            <p>
-                ผลงานและโปรเจกต์ที่สร้างขึ้น
-            </p>
-
-        </section>
-
-
-
-        <!-- =========================
-             ACTIVITIES
-        ========================== -->
-
-        <section
-            class="placeholder"
-            id="activities">
-
-            <span>
-                04
-            </span>
-
-            <h2>
-                Activities
-            </h2>
-
-            <p>
-                กิจกรรมและประสบการณ์
-            </p>
-
-        </section>
-
-
-
-        <!-- =========================
-             SKILLS
-        ========================== -->
-
-        <section
-            class="placeholder"
-            id="skills">
-
-            <span>
-                05
-            </span>
-
-            <h2>
-                Skills
-            </h2>
-
-            <p>
-                ทักษะและความสามารถ
-            </p>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer>
-
-        <div>
-            PERSONAL PORTFOLIO
         </div>
 
-        <div>
-            © 2026
+
+        <div class="form-group full">
+
+            <label>📷 คนถ่ายภาพ</label>
+
+            <div
+                class="member-choice"
+                id="photoMembers"
+            ></div>
+
         </div>
 
-    </footer>
+
+        <div class="form-group full">
+
+            <label>🎥 คนถ่ายวิดีโอ</label>
+
+            <div
+                class="member-choice"
+                id="videoMembers"
+            ></div>
+
+        </div>
 
 
+        <div class="form-group full">
 
-    <!-- JavaScript -->
+            <label>✂️ คนตัดต่อวิดีโอ</label>
 
-    <script src="script.js"></script>
+            <div
+                class="member-choice"
+                id="editorMembers"
+            ></div>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>สถานะ</label>
+
+            <select id="jobStatus">
+
+                <option>กำลังจะถึง</option>
+                <option>กำลังดำเนินการ</option>
+                <option>เสร็จแล้ว</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group full">
+
+            <label>รายละเอียด</label>
+
+            <textarea
+                id="jobDetail"
+                placeholder="รายละเอียดเพิ่มเติมของงาน..."
+            ></textarea>
+
+        </div>
+
+    </div>
+
+    <div class="form-group full">
+
+    <label>📎 ไฟล์งาน</label>
+
+    <div class="file-upload">
+
+        <input
+            type="file"
+            id="jobFiles"
+            multiple
+            accept="image/*,video/*,.pdf,.doc,.docx,.ppt,.pptx"
+            onchange="showSelectedFiles()"
+        >
+
+        <label
+            for="jobFiles"
+            class="file-upload-button"
+        >
+            📎 เลือกไฟล์
+        </label>
+
+        <span class="file-upload-text">
+            เลือกได้หลายไฟล์
+        </span>
+
+    </div>
+
+    <div
+        id="selectedFiles"
+        class="selected-files"
+    ></div>
+
+</div>
+
+    <div class="modal-footer">
+
+        <button
+            class="cancel-btn"
+            onclick="closeModal()"
+        >
+            ยกเลิก
+        </button>
+
+        <button
+            class="save-btn"
+            onclick="saveJob()"
+        >
+            บันทึกงาน
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- JOB DETAIL -->
+
+<div id="detailModal" class="modal">
+
+<div class="modal-box detail-box">
+
+    <div class="modal-header">
+
+        <div>
+
+            <span class="modal-label">
+                รายละเอียดงาน
+            </span>
+
+            <h2 id="detailTitle">
+                รายละเอียดงาน
+            </h2>
+
+        </div>
+
+        <button
+            class="close-btn"
+            onclick="closeDetail()"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div id="detailContent"></div>
+
+
+    <div class="modal-footer">
+
+        <button
+            class="cancel-btn"
+            onclick="closeDetail()"
+        >
+            ปิด
+        </button>
+
+        <button
+            class="save-btn"
+            id="detailEditBtn"
+        >
+            ✏️ แก้ไขงาน
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- MEMBER MODAL -->
+
+<div id="memberModal" class="modal">
+
+<div class="modal-box member-modal-box">
+
+    <div class="modal-header">
+
+        <div>
+
+            <span class="modal-label">
+                สมาชิกชมรม
+            </span>
+
+            <h2>
+                เพิ่มสมาชิก
+            </h2>
+
+        </div>
+
+        <button
+            class="close-btn"
+            onclick="closeMemberModal()"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label>
+            ชื่อสมาชิก
+        </label>
+
+        <input
+            id="memberName"
+            placeholder="เช่น เณรสมชาย"
+        >
+
+    </div>
+
+
+    <div class="modal-footer">
+
+        <button
+            class="cancel-btn"
+            onclick="closeMemberModal()"
+        >
+            ยกเลิก
+        </button>
+
+        <button
+            class="save-btn"
+            onclick="saveMember()"
+        >
+            บันทึกสมาชิก
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
